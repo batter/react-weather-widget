@@ -10,10 +10,13 @@
   "license": "ISC",
   "devDependencies": {
     "http-server": "^0.8.0",
+    "json-loader": "^0.5.2",
     "jsx-loader": "^0.13.2",
     "node-libs-browser": "^0.5.2",
     "react": "^0.13.3",
     "react-hot-loader": "^1.2.7",
+    "superagent": "^1.2.0",
+    "superagent-jsonp": "0.0.3",
     "webpack": "^1.10.1",
     "webpack-dev-server": "^1.10.1"
   },
