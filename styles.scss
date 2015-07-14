@@ -79,7 +79,10 @@ body { font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
         float: left;
         margin: 0 .5em;
 
-        .day-of-week { margin-bottom: .5em; }
+        .day-of-week {
+          margin-bottom: .5em;
+          font-weight: bold;
+        }
         canvas.skycon {
           width: 40px;
           margin-left: -$temp-padding;
