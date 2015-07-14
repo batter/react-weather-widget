@@ -42,12 +42,20 @@ class Weather extends Component {
     }
   }
 
+  nextTemp () {
+    if (this.state.hourly === undefined) {
+      return undefined;
+    }
+
+    return this.state.hourly.data[0].temperature;
+  }
+
   render () {
     if (config.api_key !== null) {
       return (
         <div>
           <LocationBar location={this.state.location} />
-          <CurrentConditions {...this.state.currently} />
+          <CurrentConditions nextTemp={this.nextTemp()} {...this.state.currently} />
           <WeekOverview {...this.state.daily} />
           <div className='clear'></div>
         </div>

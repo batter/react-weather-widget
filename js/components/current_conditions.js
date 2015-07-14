@@ -17,6 +17,18 @@ class CurrentConditions extends Component {
     return value.replace(/-/g, '_');
   }
 
+  tempTrend() {
+    if (this.props.nextTemp === this.props.temperature) {
+      return 'stagnating';
+    }
+    else if (this.props.nextTemp > this.props.temperature) {
+      return 'raising';
+    }
+    else {
+      return 'falling'
+    }
+  }
+
   render () {
     // Don't print until props are passed down
     if (this.props.temperature !== undefined) {
@@ -26,14 +38,19 @@ class CurrentConditions extends Component {
             <Skycons className = 'skycon'
                      color     = 'black'
                      icon      = {translateSkyconIconName(this.props.icon)} />
-            <div className='temp'>
-              <div>
+            <div className='temp-and-trend'>
+              <div className='temp'>
                 <span className='value'>
                   {Math.round(this.props.temperature)}
                 </span>
                 <span clasName='degree-symbol'>
                   &deg;
                 </span>
+              </div>
+              <div className='trend'>
+                and
+                {' '}
+                {this.tempTrend()}
               </div>
             </div>
             <div className='clear'></div>

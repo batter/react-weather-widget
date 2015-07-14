@@ -29,13 +29,18 @@ body { font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
         height: 50px;
         width: 90px;
       }
-      .temp {
+      .temp-and-trend {
         float: left;
-        font-weight: bold;
-        font-size: 2em;
-        margin-bottom: .35em;
+        margin-bottom: 0.8em;
         margin-top: .15em;
         margin-left: -12px;
+
+        .temp {
+          font-weight: bold;
+          font-size: 2em;
+          padding-bottom: 0;
+        }
+        .trend { font-size: 0.7em; }
       }
     }
     .summary {
@@ -56,7 +61,7 @@ body { font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
       text-align: right;
 
       div.high {
-        margin-bottom: $temp-padding;
+        margin-bottom: $temp-padding*2;
         color: #F79B8D;
       }
       div.low { color: #063574; }
@@ -79,7 +84,7 @@ body { font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
           padding-left: $temp-padding;
           font-size: $temp-font-size;
 
-          .high { margin-bottom: $temp-padding; }
+          .high { margin-bottom: $temp-padding*2; }
           .low  { color: #999; }
         }
       }
