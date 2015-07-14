@@ -2,6 +2,7 @@ import React from 'react';
 
 import LocationBar       from './components/location_bar';
 import CurrentConditions from './components/current_conditions';
+import WeekOverview      from './components/week_overview';
 
 import getForecast from './utils/getForecast';
 
@@ -47,6 +48,8 @@ class Weather extends Component {
         <div>
           <LocationBar location={this.state.location} />
           <CurrentConditions {...this.state.currently} />
+          <WeekOverview {...this.state.daily} />
+          <div className='clear'></div>
         </div>
       );
     }

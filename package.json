@@ -13,6 +13,7 @@
     "http-server": "^0.8.0",
     "json-loader": "^0.5.2",
     "jsx-loader": "^0.13.2",
+    "moment": "^2.10.3",
     "node-libs-browser": "^0.5.2",
     "numeral": "^1.5.3",
     "react": "^0.13.3",
