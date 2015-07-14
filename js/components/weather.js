@@ -1,18 +1,18 @@
 import React from 'react';
 
-import LocationBar       from './components/location_bar';
-import CurrentConditions from './components/current_conditions';
-import WeekOverview      from './components/week_overview';
+import LocationBar       from './location_bar';
+import CurrentConditions from './current_conditions';
+import WeekOverview      from './week_overview';
 
-import getForecast from './utils/getForecast';
+import getForecast from './../utils/getForecast';
 
 const {
   Component,
 } = React;
 
-import './../styles.scss';
+import './../../styles.scss';
 
-import config from './../config.json';
+import config from './../../config.json';
 
 class Weather extends Component {
   constructor (props) {
