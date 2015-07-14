@@ -1,20 +1,26 @@
 import React from 'react';
 
+import LocationBar from './location_bar';
+
 import getForecast from './utils/getForecast';
 
 const {
   Component,
 } = React;
 
-import config from './../config.json';
+import './../styles.scss';
 
+import config from './../config.json';
 
 class Weather extends Component {
   constructor (props) {
     super(props);
 
+    this.state = { location: config.location };
+
     if (config.api_key !== null) {
-      this.fetchCurentForecast();
+      // uncomment to start fetching actual forecast data
+      // this.fetchCurentForecast();
     }
   }
 
@@ -39,6 +45,7 @@ class Weather extends Component {
     if (config.api_key !== null) {
       return (
         <div>
+          <LocationBar location={this.state.location} />
           Weather info placeholder
         </div>
       );
