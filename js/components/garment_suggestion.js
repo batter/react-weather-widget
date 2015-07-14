@@ -1,6 +1,6 @@
 import React from 'react';
 
-import suggestGarment from './../utils/suggestGarment';
+import suggestGarment from './../utils/suggest_garment';
 
 const {
   Component,

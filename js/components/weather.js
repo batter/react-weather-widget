@@ -4,7 +4,7 @@ import LocationBar       from './location_bar';
 import CurrentConditions from './current_conditions';
 import WeekOverview      from './week_overview';
 
-import getForecast from './../utils/getForecast';
+import getForecast from './../utils/get_forecast';
 
 const {
   Component,

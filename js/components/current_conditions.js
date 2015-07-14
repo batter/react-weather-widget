@@ -2,9 +2,9 @@ import React   from 'react';
 import numeral from 'numeral';
 import Skycons from 'react-skycons';
 
-import GarmentSuggestion from './garmentSuggestion';
+import GarmentSuggestion from './garment_suggestion';
 
-import translateSkyconIconName from './../utils/translateSkyconIconName';
+import translateSkyconIconName from './../utils/translate_skycon_icon_name';
 
 const {
   Component,
