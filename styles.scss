@@ -1,3 +1,5 @@
+.clear { clear: both; }
+
 #application {
   #location-bar {
     border-bottom: 1px solid #000;
@@ -11,12 +13,22 @@
 
   #current-conditions {
     text-align: center;
-    width: 130px;
+    width: 150px;
 
-    .temp {
-      font-weight: bold;
-      font-size: 1.5em;
-      margin-bottom: .5em;
+    .temp-and-skycon {
+      canvas.skycon {
+        float: left;
+        height: 50px;
+        width: 90px;
+      }
+      .temp {
+        float: left;
+        font-weight: bold;
+        font-size: 2em;
+        margin-bottom: .35em;
+        margin-top: .15em;
+        margin-left: -12px;
+      }
     }
     .summary {
       font-size: 1.15em;
