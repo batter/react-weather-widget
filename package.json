@@ -4,7 +4,8 @@
   "description": "Practice React Weather Widget",
   "main": "index.js",
   "scripts": {
-    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --progress --colors"
+    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --progress --colors",
+    "test": "./node_modules/.bin/mocha -w test/**/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,8 @@
     "json-loader": "^0.5.2",
     "jsx-loader": "^0.13.2",
     "lodash": "^3.10.0",
+    "mocha": "^2.2.5",
+    "mocha-traceur": "^2.1.0",
     "moment": "^2.10.3",
     "node-libs-browser": "^0.5.2",
     "numeral": "^1.5.3",
@@ -21,6 +24,7 @@
     "react-hot-loader": "^1.2.7",
     "react-skycons": "^0.1.1",
     "sass-loader": "^1.0.2",
+    "should": "^7.0.2",
     "style-loader": "^0.12.3",
     "superagent": "^1.2.0",
     "superagent-jsonp": "0.0.3",

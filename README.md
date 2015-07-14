@@ -26,12 +26,10 @@ accessories that may be required.
 ## Quick Start
 
 ```
-npm install
-npm run watch
+$ npm install
+$ npm run watch
 ```
 
 ## Testing
-
-As mentioned, write tests with either the Jest of Mocha frameworks. A testing harness should execute using the following command.
 
     $ npm test
