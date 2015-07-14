@@ -23,6 +23,13 @@ accessories that may be required.
 - Leverage [Forecast.io Api](https://developer.forecast.io/) for data
 - Test with Mocha or Jest
 
+## Quick Start
+
+```
+npm install
+npm run watch
+```
+
 ## Testing
 
 As mentioned, write tests with either the Jest of Mocha frameworks. A testing harness should execute using the following command.
