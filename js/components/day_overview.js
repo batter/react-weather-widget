@@ -2,6 +2,8 @@ import React   from 'react';
 import moment  from 'moment';
 import Skycons from 'react-skycons';
 
+import GarmentSuggestion from './garmentSuggestion';
+
 import translateSkyconIconName from './../utils/translateSkyconIconName';
 
 const {
@@ -29,6 +31,9 @@ class DayOverview extends Component {
               &deg;
             </div>
           </div>
+          <GarmentSuggestion
+              temperature = {this.props.temperatureMax}
+              activity    = {this.props.summary} />
         </div>
       );
     }

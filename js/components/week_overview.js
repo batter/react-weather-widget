@@ -24,6 +24,7 @@ class WeekOverview extends Component {
           <div className='labels'>
             <div className='high'>High</div>
             <div className='low'>Low</div>
+            <div className='garment'>Garment</div>
           </div>
           <div className='days'>
             {this.contents()}

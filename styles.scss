@@ -89,9 +89,13 @@ body { font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
           padding-left: $temp-padding;
           font-size: $temp-font-size;
 
-          .high { margin-bottom: $temp-padding*2; }
-          .low  { color: #999; }
+          div {
+            margin-bottom: $temp-padding*2;
+
+            &.low  { color: #999; }
+          }
         }
+        .garment-suggestion { padding-top: 2px; }
       }
     }
   }
