@@ -25,10 +25,6 @@ class Weather extends Component {
     }
   }
 
-  componentWillUpdate (nextProps, nextState) {
-    console.log(nextState);
-  }
-
   fetchCurentForecast() {
     getForecast(this.handleForecastResponse.bind(this));
   }
