@@ -2,6 +2,8 @@ import React   from 'react';
 import numeral from 'numeral';
 import Skycons from 'react-skycons';
 
+import translateSkyconIconName from './../utils/translateSkyconIconName';
+
 const {
   Component,
 } = React;
@@ -21,7 +23,9 @@ class CurrentConditions extends Component {
       return (
         <div id='current-conditions'>
           <div className='temp-and-skycon'>
-            <Skycons className='skycon' color='black' icon={this.skyconIconName()} />
+            <Skycons className = 'skycon'
+                     color     = 'black'
+                     icon      = {translateSkyconIconName(this.props.icon)} />
             <div className='temp'>
               <div>
                 <span className='value'>
