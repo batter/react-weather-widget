@@ -48,6 +48,11 @@ body { font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
       font-weight: bold;
       margin-bottom: .1em;
     }
+    .garment-wrapper {
+      margin-top: .5em;
+
+      span { font-style: italic; }
+    }
   }
 
   #week-overview {
@@ -60,11 +65,11 @@ body { font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
       font-size: $temp-font-size;
       text-align: right;
 
-      div.high {
-        margin-bottom: $temp-padding*2;
-        color: #F79B8D;
+      div {
+        &:not(:last-child) { margin-bottom: $temp-padding*2; }
+        &.high { color: #F79B8D; }
+        &.low { color: #063574; }
       }
-      div.low { color: #063574; }
     }
     .days {
       float: left;
@@ -91,3 +96,5 @@ body { font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
     }
   }
 }
+
+.garment-suggestion { font-size: .8em; }

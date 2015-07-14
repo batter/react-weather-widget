@@ -2,6 +2,8 @@ import React   from 'react';
 import numeral from 'numeral';
 import Skycons from 'react-skycons';
 
+import GarmentSuggestion from './garmentSuggestion';
+
 import translateSkyconIconName from './../utils/translateSkyconIconName';
 
 const {
@@ -66,6 +68,12 @@ class CurrentConditions extends Component {
               {' '}
               mph (S)
             </span>
+          </div>
+          <div className='garment-wrapper'>
+            What to wear
+            <GarmentSuggestion
+                temperature = {this.props.temperature}
+                activity    = {this.props.summary} />
           </div>
         </div>
       );
