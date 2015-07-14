@@ -14,6 +14,7 @@
     "json-loader": "^0.5.2",
     "jsx-loader": "^0.13.2",
     "node-libs-browser": "^0.5.2",
+    "numeral": "^1.5.3",
     "react": "^0.13.3",
     "react-hot-loader": "^1.2.7",
     "sass-loader": "^1.0.2",
