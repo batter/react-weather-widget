@@ -7,7 +7,7 @@ export default function(temp, pattern) {
 
   function rainGarment()
   {
-    return _.sample(['Rain Coat', 'Umbrella', 'Rain Boots']);
+    return _.sample(['Rain Coat', 'Umbrella', 'Rain Boots', 'Poncho']);
   }
 
   if (temp <= 40) {
@@ -41,7 +41,12 @@ export default function(temp, pattern) {
     }
   }
   else if (temp > 82 && temp <= 95) {
-    return 'Bathing Suit';
+    if (pattern.search('rain') >= 0) {
+      return rainGarment();
+    }
+    else {
+      return 'Bathing Suit';
+    }
   }
   else {
     return 'Birthday Suit';
