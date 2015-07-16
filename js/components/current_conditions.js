@@ -20,10 +20,10 @@ class CurrentConditions extends Component {
   }
 
   tempTrend() {
-    if (this.props.nextTemp === this.props.temperature) {
+    if (Math.round(this.props.nextTemp) === Math.round(this.props.temperature)) {
       return 'stagnating';
     }
-    else if (this.props.nextTemp > this.props.temperature) {
+    else if (Math.round(this.props.nextTemp) > Math.round(this.props.temperature)) {
       return 'raising';
     }
     else {
