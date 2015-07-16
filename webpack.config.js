@@ -33,7 +33,11 @@ module.exports = {
         test: /\.json$/,
         loader: 'json-loader'
       },
-      { test: /\.js$/, loaders: ['react-hot', 'jsx', 'babel'], exclude: /node_modules/ }
+      {
+        test: /\.js$/,
+        loaders: ['react-hot', 'jsx', 'babel'],
+        exclude: /node_modules/
+      }
     ]
   }
 };
