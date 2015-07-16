@@ -30,6 +30,8 @@ $ npm install
 $ npm run watch
 ```
 
+The application can be accessed by visiting `http://localhost:8080` in your browser
+
 ## Testing
 
     $ npm test
