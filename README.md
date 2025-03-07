@@ -25,12 +25,20 @@ accessories that may be required.
 
 ## Quick Start
 
+First, get an API key from [Pirate Weather](https://pirate-weather.apiable.io/)
+and plug it into `config.json` as the value for the `api-key` attribute.
+
+Then run these commands in your console:
+
+
 ```
 $ npm install
 $ npm run watch
 ```
 
 The application can be accessed by visiting `http://localhost:8080` in your browser
+
+You can also modify the location in `config.json` if you wish to see weather for locations beyond New York
 
 ## Testing
 
