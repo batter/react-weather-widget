@@ -45,7 +45,7 @@ class CurrentConditions extends Component {
                 <span className='value'>
                   {Math.round(this.props.temperature)}
                 </span>
-                <span clasName='degree-symbol'>
+                <span className='degree-symbol'>
                   &deg;
                 </span>
               </div>
