@@ -1,3 +1,5 @@
+![Image of Weather App](screenshot.png "Weather App")
+
 # Project Description
 
 As a New Yorker, we find changes in weather to be a part of life. To be ready
