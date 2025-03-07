@@ -20,7 +20,7 @@ accessories that may be required.
 
 - Use node package management
 - Base application on React and Flux frameworks
-- Leverage [Forecast.io Api](https://developer.forecast.io/) for data
+- Leverage [Pirateweather.net Api](https://pirateweather.net/) for data
 - Test with Mocha or Jest
 
 ## Quick Start
