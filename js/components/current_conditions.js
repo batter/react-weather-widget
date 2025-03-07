@@ -6,24 +6,21 @@ import GarmentSuggestion from './garment_suggestion';
 
 import translateSkyconIconName from './../utils/translate_skycon_icon_name';
 
-const {
-  Component,
-} = React;
-
-class CurrentConditions extends Component {
-  skyconIconName() {
-    if (this.props.icon === undefined) {
+const CurrentConditions = (props) => {
+  const skyconIconName = () => {
+    if (props.icon === undefined) {
       return null;
     }
-    let value = this.props.icon.toUpperCase();
+
+    let value = props.icon.toUpperCase();
     return value.replace(/-/g, '_');
   }
 
-  tempTrend() {
-    if (Math.round(this.props.nextTemp) === Math.round(this.props.temperature)) {
+  const tempTrend = () => {
+    if (Math.round(props.nextTemp) === Math.round(props.temperature)) {
       return 'stagnating';
     }
-    else if (Math.round(this.props.nextTemp) > Math.round(this.props.temperature)) {
+    else if (Math.round(props.nextTemp) > Math.round(props.temperature)) {
       return 'raising';
     }
     else {
@@ -31,56 +28,53 @@ class CurrentConditions extends Component {
     }
   }
 
-  render () {
-    // Don't print until props are passed down
-    if (this.props.temperature !== undefined) {
-      return (
-        <div id='current-conditions'>
-          <div className='temp-and-skycon'>
-            <Skycons className = 'skycon'
-                     color     = 'black'
-                     icon      = {translateSkyconIconName(this.props.icon)} />
-            <div className='temp-and-trend'>
-              <div className='temp'>
-                <span className='value'>
-                  {Math.round(this.props.temperature)}
-                </span>
-                <span className='degree-symbol'>
-                  &deg;
-                </span>
-              </div>
-              <div className='trend'>
-                and
-                {' '}
-                {this.tempTrend()}
-              </div>
+  // Don't print until props are passed down
+  if (props.temperature !== undefined) {
+    return (
+      <div id='current-conditions'>
+        <div className='temp-and-skycon'>
+          <Skycons className = 'skycon'
+                   color     = 'black'
+                   icon      = {translateSkyconIconName(props.icon)} />
+          <div className='temp-and-trend'>
+            <div className='temp'>
+              <span className='value'>
+                {Math.round(props.temperature)}
+              </span>
+              <span className='degree-symbol'>
+                &deg;
+              </span>
             </div>
-            <div className='clear'></div>
-          </div>
-          <div className='summary'>
-            {this.props.summary}
-          </div>
-          <div className='wind'>
-            <span className='label'>Wind:</span>
-            {' '}
-            <span className='value'>
-              {numeral(this.props.windSpeed).format('0.0')}
+            <div className='trend'>
+              and
               {' '}
-              mph (S)
-            </span>
+              {tempTrend()}
+            </div>
           </div>
-          <div className='garment-wrapper'>
-            What to wear
-            <GarmentSuggestion
-                temperature = {this.props.temperature}
-                activity    = {this.props.summary} />
-          </div>
+          <div className='clear'></div>
         </div>
-      );
-    }
-    else {
-      return null;
-    }
+        <div className='summary'>
+          {props.summary}
+        </div>
+        <div className='wind'>
+          <span className='label'>Wind:</span>
+          {' '}
+          <span className='value'>
+            {numeral(props.windSpeed).format('0.0')}
+            {' '}
+            mph (S)
+          </span>
+        </div>
+        <div className='garment-wrapper'>
+          What to wear
+          <GarmentSuggestion
+              temperature = {props.temperature}
+              activity    = {props.summary} />
+        </div>
+      </div>
+    );
+  } else {
+    return null;
   }
 };
 
