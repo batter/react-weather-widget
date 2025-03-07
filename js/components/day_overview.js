@@ -20,7 +20,7 @@ class DayOverview extends Component {
           </div>
           <Skycons className = 'skycon'
                    color     = 'black'
-                   icon      = {translateSkyconIconName(this.props.icon)} />
+                   type      = {translateSkyconIconName(this.props.icon)} />
           <div className='temps'>
             <div className='high'>
               {Math.round(this.props.temperatureMax)}
