@@ -19,10 +19,9 @@ export default function (callback, lat, lon) {
   lon = lon || longitude;
 
   let coords = [lat, lon].join(',');
-  let uri = 'https://api.forecast.io/forecast/' + api_key + '/' + coords;
+  let uri = 'https://api.pirateweather.net/forecast/' + api_key + '/' + coords;
 
   request
     .get(uri)
-    .jsonp()
     .end(callback);
 };

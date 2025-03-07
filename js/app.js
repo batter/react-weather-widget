@@ -1,7 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 import Weather from './components/weather';
 
 window.React = React;
 
-React.render(<Weather />, document.getElementById('application'));
+ReactDOM.render(<Weather />, document.getElementById('application'));

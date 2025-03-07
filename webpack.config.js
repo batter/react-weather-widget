@@ -1,3 +1,6 @@
+const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 function getEntrySources(sources) {
   if (process.env.NODE_ENV !== 'production') {
     sources.push('webpack-dev-server/client?http://localhost:8080');
@@ -8,11 +11,13 @@ function getEntrySources(sources) {
 }
 
 module.exports = {
+  mode: 'development',
+
   entry: {
-    app: getEntrySources([
-      './js/app.js'
-    ])
+    app: path.join(__dirname, 'js', 'app.js')
   },
+
+  watch: true,
 
   output: {
     publicPath: 'http://localhost:8080/',
@@ -20,25 +25,28 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.scss$/,
-        loader: "style!css!sass"
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.css$/,
-        loader: "style!css"
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
+        use: ['css-loader']
       },
       {
         test: /\.js$/,
-        loaders: ['react-hot', 'jsx', 'babel'],
+        use: ['react-hot-loader/webpack', 'babel-loader'],
         exclude: /node_modules/
       }
     ]
-  }
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.resolve(__dirname, 'index.html'),
+    })
+  ]
 };
 
