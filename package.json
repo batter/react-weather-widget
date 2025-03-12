@@ -1,22 +1,23 @@
 {
   "name": "practice-react-weather",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Practice React Weather Widget",
   "main": "index.html",
   "scripts": {
     "watch": "npx tsc && ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --progress",
-    "test": "./node_modules/.bin/mocha test/**/*.js"
+    "test": "./node_modules/.bin/mocha --require @babel/register test/**/*.js"
   },
-  "author": "",
+  "author": "Ben Atkins",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.26.9",
+    "@babel/register": "^7.25.9",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@types/superagent": "^8.1.9",
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
     "http-server": "^14.1.1",
-    "mocha": "^5.2.0",
-    "mocha-traceur": "^2.1.0",
+    "mocha": "^11.1.0",
     "moment": "^2.10.3",
     "numeral": "^2.0",
     "react": "^19.0",
