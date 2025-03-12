@@ -17,12 +17,11 @@
     "html-webpack-plugin": "^5.6.3",
     "http-server": "^14.1.1",
     "json-loader": "^0.5.7",
-    "jsx-loader": "^0.9.0",
+    "jsx-loader": "^0.13.0",
     "mocha": "^5.2.0",
     "mocha-traceur": "^2.1.0",
     "moment": "^2.10.3",
-    "node-libs-browser": "^0.5.2",
-    "numeral": "^1.5.3",
+    "numeral": "^2.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.13.1",
@@ -40,7 +39,7 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.26.3",
-    "babel-core": "^4.7.16",
-    "babel-loader": "^8.0"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^10.0"
   }
 }
