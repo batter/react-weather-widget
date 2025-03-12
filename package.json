@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "watch": "npx tsc && ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --progress",
-    "test": "./node_modules/.bin/mocha -w test/**/*.js"
+    "test": "./node_modules/.bin/mocha test/**/*.js"
   },
   "author": "",
   "license": "ISC",
