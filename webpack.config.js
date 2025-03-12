@@ -9,8 +9,6 @@ module.exports = {
     app: path.join(__dirname, 'js', 'app.js')
   },
 
-  watch: true,
-
   output: {
     publicPath: 'http://localhost:8080/',
     filename: 'public/[name].js'
