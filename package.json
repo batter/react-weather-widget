@@ -28,7 +28,7 @@
     "react-skycons": "^0.8.8",
     "sass": "^1.85.1",
     "sass-loader": "^16.0.5",
-    "should": "^7.0.2",
+    "should": "^13.2",
     "style-loader": "^4.0.0",
     "superagent": "^10.1.1",
     "superagent-jsonp": "^0.2.1",
