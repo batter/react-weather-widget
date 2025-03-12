@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/react": "^17.0.83",
     "@types/superagent": "^8.1.9",
     "css-loader": "^7.1.2",
     "esm": "^3.2.25",
