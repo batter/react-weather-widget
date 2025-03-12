@@ -1,5 +1,3 @@
-import React from 'react';
-
 import DayOverview from './day_overview';
 
 const WeekOverview = (props) => {

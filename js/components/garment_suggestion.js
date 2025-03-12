@@ -1,5 +1,3 @@
-import React from 'react';
-
 import suggestGarment from './../utils/suggest_garment';
 
 const GarmentSuggestion = (props) => {

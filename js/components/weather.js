@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import LocationBar       from './location_bar';
 import CurrentConditions from './current_conditions';

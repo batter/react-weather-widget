@@ -1,5 +1,3 @@
-import React from 'react';
-
 const LocationBar = (props) => {
   return (
     <div id='location-bar'>
