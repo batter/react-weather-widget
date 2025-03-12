@@ -1,14 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
-function getEntrySources(sources) {
-  if (process.env.NODE_ENV !== 'production') {
-    sources.push('webpack-dev-server/client?http://localhost:8080');
-    sources.push('webpack/hot/only-dev-server');
-  }
-
-  return sources;
-}
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -35,9 +27,14 @@ module.exports = {
         use: ['css-loader']
       },
       {
-        test: /\.(js|ts)$/,
-        use: ['react-hot-loader/webpack', 'babel-loader'],
-        exclude: /node_modules/
+        test: /\.(js|ts|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            plugins: ['react-refresh/babel']
+          }
+        }
       }
     ]
   },
@@ -46,7 +43,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'index.html'),
-    })
-  ]
+    }),
+    new ReactRefreshWebpackPlugin()
+  ],
+
+  devServer: { hot: true }
 };
 

@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import Weather from './components/weather';
 
 window.React = React;
 
-ReactDOM.render(<Weather />, document.getElementById('application'));
+const root = createRoot(document.getElementById('application'));
+root.render(<Weather />);
