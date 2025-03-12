@@ -35,7 +35,7 @@ module.exports = {
         use: ['css-loader']
       },
       {
-        test: /\.js$/,
+        test: /\.(js|ts)$/,
         use: ['react-hot-loader/webpack', 'babel-loader'],
         exclude: /node_modules/
       }
