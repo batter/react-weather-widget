@@ -6,16 +6,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = default_1;
 const superagent_1 = __importDefault(require("superagent"));
 const config_json_1 = __importDefault(require("./../../config.json"));
-const { api_key, latitude, longitude, } = config_json_1.default;
+const { API_KEY, LATITUDE, LONGITUDE, } = config_json_1.default;
 // fetches a forecast response from Pirateweather.net via SuperAgent
 function default_1(callback, lat, lon) {
-    if (config_json_1.default.api_key === null) {
+    if (API_KEY === null) {
         return;
     }
-    lat = lat || latitude;
-    lon = lon || longitude;
+    lat = lat || LATITUDE;
+    lon = lon || LONGITUDE;
     let coords = [lat, lon].join(',');
-    let uri = 'https://api.pirateweather.net/forecast/' + api_key + '/' + coords;
+    let uri = 'https://api.pirateweather.net/forecast/' + API_KEY + '/' + coords;
     superagent_1.default
         .get(uri)
         .end(callback);

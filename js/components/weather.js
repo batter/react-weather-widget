@@ -10,8 +10,12 @@ import './../../styles.scss';
 
 import config from './../../config.json';
 
+const {
+  LOCATION,
+} = config;
+
 const Weather = () => {
-  const [location, setLocation] = useState(config.location);
+  const [location, setLocation] = useState(LOCATION);
   const [hourly, setHourly] = useState();
   const [daily, setDaily] = useState();
   const [currently, setCurrently] = useState();
