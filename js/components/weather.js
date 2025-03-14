@@ -24,15 +24,10 @@ const Weather = () => {
     getForecast(handleForecastResponse);
   }
 
-  const handleForecastResponse = (err, res) => {
-    if (res.body !== undefined) {
-      setCurrently(res.body.currently);
-      setDaily(res.body.daily);
-      setHourly(res.body.hourly);
-    } else {
-      console.log('Error!');
-      console.log(err);
-    }
+  const handleForecastResponse = (responseBody) => {
+    setCurrently(responseBody.currently);
+    setDaily(responseBody.daily);
+    setHourly(responseBody.hourly);
   }
 
   const nextTemp = () => {
