@@ -1,30 +1,18 @@
-import DayOverview from './day_overview';
-
-const WeekOverview = (props) => {
-  const contents = () => {
-    return(props.data?.map((data, i) => {
-      return( <DayOverview key={i} {...data} /> );
-    }));
-  }
-
-  if (props.data !== undefined) {
-    return (
-      <div id='week-overview'>
-        <div className='labels'>
-          <div className='high'>High</div>
-          <div className='low'>Low</div>
-          <div className='garment'>Garment</div>
-        </div>
-        <div className='days'>
-          {contents()}
-        </div>
-        <div className='clear'></div>
-      </div>
-    );
-  }
-  else {
-    return null;
-  }
-};
-
-export default WeekOverview;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = WeekOverview;
+const jsx_runtime_1 = require("react/jsx-runtime");
+const day_overview_1 = require("./day_overview");
+function WeekOverview({ data }) {
+    if (data !== undefined) {
+        const contents = () => {
+            return (data.map((data, i) => {
+                return ((0, jsx_runtime_1.jsx)(day_overview_1.DayOverview, { ...data }, i));
+            }));
+        };
+        return ((0, jsx_runtime_1.jsxs)("div", { id: 'week-overview', children: [(0, jsx_runtime_1.jsxs)("div", { className: 'labels', children: [(0, jsx_runtime_1.jsx)("div", { className: 'high', children: "High" }), (0, jsx_runtime_1.jsx)("div", { className: 'low', children: "Low" }), (0, jsx_runtime_1.jsx)("div", { className: 'garment', children: "Garment" })] }), (0, jsx_runtime_1.jsx)("div", { className: 'days', children: contents() }), (0, jsx_runtime_1.jsx)("div", { className: 'clear' })] }));
+    }
+    else {
+        return null;
+    }
+}

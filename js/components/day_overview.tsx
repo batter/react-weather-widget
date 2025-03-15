@@ -5,7 +5,7 @@ import GarmentSuggestion from './garment_suggestion';
 
 import translateSkyconIconName from './../utils/translate_skycon_icon_name';
 
-interface DayOverviewProps {
+export interface DayOverviewProps {
   icon: string;
   summary: string;
   time: number;
@@ -13,7 +13,7 @@ interface DayOverviewProps {
   temperatureMin: number;
 }
 
-export default function DayOverview(
+export function DayOverview(
   { icon, summary, time, temperatureMax, temperatureMin }: DayOverviewProps
 ) {
   if (time !== undefined && icon !== undefined) {
