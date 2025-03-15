@@ -5,18 +5,25 @@ import GarmentSuggestion from './garment_suggestion';
 
 import translateSkyconIconName from './../utils/translate_skycon_icon_name';
 
-interface CurrentConditionProps {
+export interface CurrentConditionResponseProps {
   icon: string;
-  nextTemp: number;
   summary: string;
   temperature: number;
   windSpeed: number;
 }
 
-export default function CurrentConditions(
+export interface CurrentConditionProps extends CurrentConditionResponseProps {
+  nextTemp: number | undefined;
+}
+
+export function CurrentConditions(
   { icon, nextTemp, summary, temperature, windSpeed }: CurrentConditionProps
 ) {
   const tempTrend = () => {
+    if (nextTemp === undefined) {
+      return;
+    }
+
     if (Math.round(nextTemp) === Math.round(temperature)) {
       return 'stagnating';
     }

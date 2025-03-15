@@ -1,5 +1,7 @@
 import config from './../../config.json';
 
+import { WeatherResponseProps } from './../components/weather';
+
 const {
   API_KEY,
   LATITUDE,
@@ -7,7 +9,7 @@ const {
 } = config;
 
 // fetches a forecast response from Pirateweather.net via SuperAgent
-export default function (callback: (value: Response) => undefined, lat: string, lon: string) {
+export default function (callback: (value: WeatherResponseProps) => void, lat?: string, lon?: string) {
   if (API_KEY === null) {
     return;
   }

@@ -9,6 +9,7 @@ export interface DayOverviewProps {
   icon: string;
   summary: string;
   time: number;
+  temperature: number;
   temperatureMax: number;
   temperatureMin: number;
 }
