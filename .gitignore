@@ -27,4 +27,4 @@ build/Release
 node_modules
 
 # omit js files now that all files are written in Typescript
-js/**/*.js
+src/**/*.js
