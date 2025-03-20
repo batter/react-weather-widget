@@ -22,6 +22,7 @@ export default function (callback: (value: WeatherResponseProps) => void, lat?: 
 
 
   let coords = [lat, lon].join(',');
+
   let uri = 'https://api.pirateweather.net/forecast/' + API_KEY + '/' + coords;
 
   fetch(uri)

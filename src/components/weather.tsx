@@ -12,6 +12,12 @@ import './../../styles.scss';
 
 import config from './../../config.json';
 
+export interface LocationProps {
+  LATITUDE: string;
+  LONGITUDE: string;
+  NAME: string;
+}
+
 interface TimelyResponseProps {
   summary: string;
   icon: string;
@@ -28,6 +34,10 @@ const {
   API_KEY,
   LOCATIONS,
 } = config;
+
+const LOCATION_MAP: Record<string, LocationProps> = { };
+
+LOCATIONS.map((location: LocationProps) => { LOCATION_MAP[location.NAME] = location });
 
 let LOCATION = LOCATIONS[0].NAME;
 
@@ -51,6 +61,13 @@ export default function Weather() {
     return hourly?.data[0]?.temperature;
   }
 
+  const changeLocation = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    let location = LOCATION_MAP[event.target.value];
+
+    setLocation(location.NAME);
+    getForecast(handleForecastResponse, location.LATITUDE, location.LONGITUDE)
+  }
+
   if (API_KEY !== null && currently === undefined) {
     fetchCurentForecast();
   }
@@ -58,7 +75,7 @@ export default function Weather() {
   if (API_KEY !== null) {
     return (
       <div>
-        <LocationBar location={location} />
+        <LocationBar location={location} locations={LOCATIONS} changeLocation={changeLocation} />
         <CurrentConditions nextTemp={nextTemp()} {...(currently as CurrentConditionResponseProps)} />
         <WeekOverview {...(daily as TimelyResponseProps)} />
         <div className='clear'></div>
