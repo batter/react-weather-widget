@@ -4,9 +4,12 @@ import { WeatherResponseProps } from './../components/weather';
 
 const {
   API_KEY,
-  LATITUDE,
-  LONGITUDE,
+  LOCATIONS,
 } = config;
+
+const DEFAULT_LOCATION = LOCATIONS[0];
+const DEFAULT_LATITUDE = DEFAULT_LOCATION.LATITUDE;
+const DEFAULT_LONGITUDE = DEFAULT_LOCATION.LONGITUDE;
 
 // fetches a forecast response from Pirateweather.net via SuperAgent
 export default function (callback: (value: WeatherResponseProps) => void, lat?: string, lon?: string) {
@@ -14,8 +17,9 @@ export default function (callback: (value: WeatherResponseProps) => void, lat?: 
     return;
   }
 
-  lat = lat || LATITUDE;
-  lon = lon || LONGITUDE;
+  lat = lat || DEFAULT_LATITUDE;
+  lon = lon || DEFAULT_LONGITUDE;
+
 
   let coords = [lat, lon].join(',');
   let uri = 'https://api.pirateweather.net/forecast/' + API_KEY + '/' + coords;

@@ -1,6 +1,30 @@
 {
-  "API_KEY": null,
-  "LATITUDE": "40.7142",
-  "LONGITUDE": "-74.0064",
-  "LOCATION": "New York, NY"
+  "API_KEY": "QMUvOs34tfYT2PMauV7pfPNKFJ8wt49i",
+  "LOCATIONS": [
+    {
+      "LATITUDE": "40.7142",
+      "LONGITUDE": "-74.0064",
+      "NAME": "New York, NY"
+    },
+    {
+      "LATITUDE": "34.0549",
+      "LONGITUDE": "-118.2426",
+      "NAME": "Los Angeles, CA"
+    },
+    {
+      "LATITUDE": "41.8781",
+      "LONGITUDE": "-87.6298",
+      "NAME": "Chicago, IL"
+    },
+    {
+      "LATITUDE": "38.9072",
+      "LONGITUDE": "-77.0369",
+      "NAME": "Washington, DC"
+    },
+    {
+      "LATITUDE": "37.7749",
+      "LONGITUDE": "-112.4194",
+      "NAME": "San Francisco, CA"
+    }
+  ]
 }

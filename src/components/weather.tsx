@@ -26,8 +26,10 @@ export interface WeatherResponseProps {
 
 const {
   API_KEY,
-  LOCATION,
+  LOCATIONS,
 } = config;
+
+let LOCATION = LOCATIONS[0].NAME;
 
 export default function Weather() {
   const [location, setLocation] = useState(LOCATION);
