@@ -68,21 +68,7 @@ export default function Weather() {
     getForecast(handleForecastResponse, location.LATITUDE, location.LONGITUDE)
   }
 
-  if (API_KEY !== null && currently === undefined) {
-    fetchCurentForecast();
-  }
-
-  if (API_KEY !== null) {
-    return (
-      <div>
-        <LocationBar location={location} locations={LOCATIONS} changeLocation={changeLocation} />
-        <CurrentConditions nextTemp={nextTemp()} {...(currently as CurrentConditionResponseProps)} />
-        <WeekOverview {...(daily as TimelyResponseProps)} />
-        <div className='clear'></div>
-      </div>
-    );
-  }
-  else {
+  if (API_KEY === null) {
     return (
       <div>
         Please enter your API Key for
@@ -91,6 +77,19 @@ export default function Weather() {
         {' '}
         in <code>config.json</code> in the project root directory
       </div>
-    )
+    );
   }
+
+  if (currently === undefined) {
+    fetchCurentForecast();
+  }
+
+  return (
+    <div>
+      <LocationBar location={location} locations={LOCATIONS} changeLocation={changeLocation} />
+      <CurrentConditions nextTemp={nextTemp()} {...(currently as CurrentConditionResponseProps)} />
+      <WeekOverview {...(daily as TimelyResponseProps)} />
+      <div className='clear'></div>
+    </div>
+  );
 }
