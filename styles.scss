@@ -87,7 +87,7 @@ body { font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
         }
         canvas.skycon {
           width: 40px;
-          margin-left: -$temp-padding;
+          margin-left: $temp-padding;
           margin-bottom: .5em;
         }
         .temps {
