@@ -35,54 +35,51 @@ export function CurrentConditions(
     }
   }
 
-  // Don't print until props are passed down
-  if (temperature !== undefined && icon !== undefined) {
-    let translatedIcon = translateSkyconIconName(icon);
+  if (temperature === undefined || icon === undefined) { return null; }
 
-    return (
-      <div id='current-conditions'>
-        <div className='temp-and-skycon'>
-          <Skycons className = 'skycon'
-                   color     = 'black'
-                   type      = {SkyconsType[translatedIcon as keyof typeof SkyconsType]} />
-          <div className='temp-and-trend'>
-            <div className='temp'>
-              <span className='value'>
-                {Math.round(temperature)}
-              </span>
-              <span className='degree-symbol'>
-                &deg;
-              </span>
-            </div>
-            <div className='trend'>
-              and
-              {' '}
-              {tempTrend()}
-            </div>
+  let translatedIcon = translateSkyconIconName(icon);
+
+  return (
+    <div id='current-conditions'>
+      <div className='temp-and-skycon'>
+        <Skycons className = 'skycon'
+                 color     = 'black'
+                 type      = {SkyconsType[translatedIcon as keyof typeof SkyconsType]} />
+        <div className='temp-and-trend'>
+          <div className='temp'>
+            <span className='value'>
+              {Math.round(temperature)}
+            </span>
+            <span className='degree-symbol'>
+              &deg;
+            </span>
           </div>
-          <div className='clear'></div>
-        </div>
-        <div className='summary'>
-          {summary}
-        </div>
-        <div className='wind'>
-          <span className='label'>Wind:</span>
-          {' '}
-          <span className='value'>
-            {numeral(windSpeed).format('0.0')}
+          <div className='trend'>
+            and
             {' '}
-            mph (S)
-          </span>
+            {tempTrend()}
+          </div>
         </div>
-        <div className='garment-wrapper'>
-          What to wear
-          <GarmentSuggestion
-              temperature = {temperature}
-              activity    = {summary} />
-        </div>
+        <div className='clear'></div>
       </div>
-    );
-  } else {
-    return null;
-  }
+      <div className='summary'>
+        {summary}
+      </div>
+      <div className='wind'>
+        <span className='label'>Wind:</span>
+        {' '}
+        <span className='value'>
+          {numeral(windSpeed).format('0.0')}
+          {' '}
+          mph (S)
+        </span>
+      </div>
+      <div className='garment-wrapper'>
+        What to wear
+        <GarmentSuggestion
+            temperature = {temperature}
+            activity    = {summary} />
+      </div>
+    </div>
+  );
 }

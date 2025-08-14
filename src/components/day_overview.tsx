@@ -17,33 +17,31 @@ export interface DayOverviewProps {
 export function DayOverview(
   { icon, summary, time, temperatureMax, temperatureMin }: DayOverviewProps
 ) {
-  if (time !== undefined && icon !== undefined) {
-    let translatedIcon = translateSkyconIconName(icon);
+  if (time === undefined || icon === undefined) { return null; }
 
-    return (
-      <div className='day'>
-        <div className='day-of-week'>
-          {moment(time, 'X').format('ddd')}
-        </div>
-        <Skycons className = 'skycon'
-                 color     = 'black'
-                 type      = {SkyconsType[translatedIcon as keyof typeof SkyconsType]} />
-        <div className='temps'>
-          <div className='high'>
-            {Math.round(temperatureMax)}
-            &deg;
-          </div>
-          <div className='low'>
-            {Math.round(temperatureMin)}
-            &deg;
-          </div>
-        </div>
-        <GarmentSuggestion
-            temperature = {temperatureMax}
-            activity    = {summary} />
+  let translatedIcon = translateSkyconIconName(icon);
+
+  return (
+    <div className='day'>
+      <div className='day-of-week'>
+        {moment(time, 'X').format('ddd')}
       </div>
-    );
-  } else {
-    return null;
-  }
+      <Skycons className = 'skycon'
+               color     = 'black'
+               type      = {SkyconsType[translatedIcon as keyof typeof SkyconsType]} />
+      <div className='temps'>
+        <div className='high'>
+          {Math.round(temperatureMax)}
+          &deg;
+        </div>
+        <div className='low'>
+          {Math.round(temperatureMin)}
+          &deg;
+        </div>
+      </div>
+      <GarmentSuggestion
+          temperature = {temperatureMax}
+          activity    = {summary} />
+    </div>
+  );
 }
