@@ -24,6 +24,8 @@ body { font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
     width: 160px;
 
     .temp-and-skycon {
+      margin-left: 2.4em;
+
       canvas.skycon {
         float: left;
         height: 50px;
@@ -61,12 +63,12 @@ body { font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
 
     .labels {
       float: left;
-      padding-top: 58px;
+      padding-top: 64px;
       font-size: $temp-font-size;
       text-align: right;
 
       div {
-        &:not(:last-child) { margin-bottom: $temp-padding*2; }
+        &:not(:last-child) { margin-bottom: $temp-padding*1.96; }
         &.high { color: #F79B8D; }
         &.low { color: #063574; }
       }
